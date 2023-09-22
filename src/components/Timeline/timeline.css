@@ -1,0 +1,47 @@
+.stage-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  margin-left: -7rem;
+}
+
+.stage-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stage-tag .line {
+  width: 5px;
+  height: 5rem;
+  border-radius: 10px;
+  background: #d434fe;
+  margin-bottom: 1rem;
+}
+
+.stage-tag .number {
+  width: 30px;
+  height: 30px;
+  border-radius: 26.5px;
+  background: linear-gradient(270deg, #903aff 0%, #d434fe 100%);
+  display: flex;
+  color: white;
+  padding-left: 0.57rem;
+}
+
+@media (max-width: 830px) {
+  .stage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 100px);
+    gap: 10px;
+  }
+
+  .line-wrapper {
+    grid-column: 2; /* Place in the second column */
+  grid-row: 1; /* Place in the first row */
+  order: -1;
+  }
+
+}

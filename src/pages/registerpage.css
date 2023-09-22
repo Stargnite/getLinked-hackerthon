@@ -1,0 +1,15 @@
+.register-page {
+	position: relative
+}
+
+.office-img {
+	min-width: 30rem;
+	height: auto;
+
+}
+
+@media  (max-width: 800px) {
+	.register-content {
+		flex-direction: column;
+	}
+}

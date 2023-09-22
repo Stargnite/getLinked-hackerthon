@@ -1,0 +1,108 @@
+.price-text .text {
+  margin-left: 5rem;
+}
+
+.rewards {
+  justify-content: space-around;
+}
+
+.runner {
+  background-color: rgba(212, 52, 254, 0.12);
+  border: 1px solid #d434fe;
+  padding: 10px;
+  border-radius: 10px;
+  flex-direction: column;
+  width: auto;
+  height: 15rem;
+}
+
+.runner-level {
+  margin-top: 2.5rem;
+}
+
+.amount {
+  font-size: 1.875rem/* 30px */;
+    line-height: 2.25rem
+}
+
+.winner {
+  background-color: rgba(212, 52, 254, 0.12);
+  border: 1px solid #d434fe;
+  padding: 10px;
+  border-radius: 10px;
+  flex-direction: column;
+  width: 13;
+  height: 15rem;
+  margin: 1.5rem;
+  height: 16rem;
+}
+
+.runner-level h1,
+.runner-level p,
+.runner-level .amount {
+  background: rgba(212, 52, 254, 0.12);
+}
+
+.rewards .medal {
+  background: transparent;
+  margin-top: -60%;
+}
+
+
+
+
+
+@media (max-width: 830px) {
+  .prizes-wrapper {
+    flex-direction: column;
+    justify-content: center !important;
+  }
+
+  .trophy {
+    max-width: 25rem;
+  }
+
+  .price-text {
+    padding-top: 2rem;
+    text-align: center;
+    margin: 0;
+  }
+
+  .price-text .text {
+    max-width: 25rem;
+    margin-left: 0;
+  }
+
+  .rewards {
+    align-self: center;
+    justify-content: center;
+  }
+  .runner {
+    max-width: 5rem;
+    max-height: 7rem;
+  }
+
+  .winner {
+    max-width: 7rem;
+    max-height: 8rem;
+    margin: auto 0.5rem;
+  }
+
+  .runner-level {
+    margin-top: 0;
+  }
+
+  .runner-level h1 {
+    font-size: 1rem;
+  }
+  .runner-level p {
+    font-size: .7rem;
+    padding-top: -5rem;
+    line-height: 0rem;
+    /* background: rgba(212, 52, 254, 0.1) */
+  }
+  .amount {
+    font-size: .8rem;
+    padding-top: -.5rem;
+  }
+}

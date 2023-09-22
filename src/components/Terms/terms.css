@@ -1,0 +1,63 @@
+.terms {
+  padding-left: 4rem;;
+  padding-right: 4rem;
+  margin-top: 9rem;
+}
+
+.terms .total-text .header {
+  text-align: center;
+  width: auto;
+  margin: 0 3rem;
+  margin-bottom: 3rem;
+}
+
+.main-text {
+  border-radius: 5px;
+  border: 1px solid #d434fe;
+  background: rgba(217, 217, 217, 0.03);
+  padding: 5rem;
+  max-width: 35rem
+}
+
+.main-text p,
+.main-text h1,
+.main-text .list {
+  background: transparent;
+}
+
+.security-img {
+	position: relative;
+}
+
+.padlock-man {
+	position: absolute;
+	background-color: transparent;
+}
+
+
+@media (max-width: 830px) {
+  .terms {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .main-text {
+    margin: auto 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .total-text h1 {
+    line-height: normal;
+  }
+
+  .main-text h1 {
+    text-align: left;
+  }
+  .list {
+    text-align: left;
+  }
+
+  .padlock-man, .padlock-svg {
+    max-width: 20rem;
+  }
+}

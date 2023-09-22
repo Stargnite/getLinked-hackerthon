@@ -1,0 +1,22 @@
+.footer-wrapper .text, .remark, .contact, .links-wrapper {
+	background: #100B20;
+}
+.footer {
+	background-color: #100B20;
+	margin-top: 10rem;
+	padding: 1.75rem 8rem;
+    
+}
+
+@media (max-width: 830px) {
+	.footer {
+		flex-direction: column;
+	}
+	.terms-of-use {
+		margin-bottom: 2rem;
+	}
+
+	.links-wrapper .links {
+		margin-bottom: 2rem;
+	}
+}
