@@ -5,13 +5,22 @@
 }
 
 .form-wrapper .text,
-form {
+form,
+.move {
   background: rgba(255, 255, 255, 0.03);
+}
+
+.form-wrapper {
+  padding: 2.5rem
+}
+
+.move {
+  width: 100%;
 }
 
 .input-content,
 .warning,
-.no-back {
+.no-back, .input-content-last {
   background: rgba(255, 255, 255, 0);
 }
 
@@ -24,7 +33,7 @@ form {
   padding: 0.5rem 1rem;
 }
 
-.input-content {
+.input-content, .input-content-last {
   display: flex;
   justify-content: space-between;
   min-width: 30rem;
@@ -66,4 +75,50 @@ form {
     #ff26b9 99.99%,
     #fe34b9 100%
   );
+}
+
+@media (max-width: 630px) {
+  .form-wrapper,
+  .form-wrapper .text,
+  form,
+  .move {
+    background: none;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  }
+
+  .form-wrapper {
+    padding: 0;
+  }
+
+  form {
+
+  }
+
+  .form-content h1:nth-child(1) {
+    font-size: 1.4rem;
+    position: absolute;
+    top: -2%;
+    left: 5%;
+  }
+
+  .form-content h1:nth-child(3) {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+   align-items: start;
+  }
+
+  .input-content {
+    flex-direction: column;
+    margin-bottom: -1rem;
+    min-width: auto;
+  }
+
+  .input-content .cont {
+    margin-bottom: 1rem;
+  }
+
+  .input-content-last {
+    margin-bottom: -1rem;
+    max-width: 1rem;    
+  }
 }

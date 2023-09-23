@@ -1,16 +1,17 @@
 import "./form.css";
+import Move from './../../../public/move.svg'
 
-const Form = ({showModal}) => {
+const Form = ({ showModal }) => {
   return (
-    <div className="form-wrapper flex flex-col py-10 px-10">
+    <div className="form-wrapper flex flex-col">
       <div className="form-content">
         <h1 className="text text-primary font-mono text-3xl pb-10">Register</h1>
-        <p className="text pb-6">Be part of the movement</p>
+        <img src={Move} alt="" className="move" />
         <h1 className="text font-semibold text-3xl pb-16">
           CREATE YOUR ACCOUNT
         </h1>
       </div>
-      <div className="form self-center">
+      <div className="form ">
         <form>
           <div className="input-content">
             <div className="cont">
@@ -86,13 +87,16 @@ const Form = ({showModal}) => {
                 type="number"
                 id="groupSize"
                 name="groupSize"
-				placeholder="Enter group size"
+                placeholder="Enter group size"
                 required
                 min="1"
                 className="text"
               />
             </div>
           </div>
+
+
+
 
           <div className="end-details no-back">
             <p className="warning italic text-primary">

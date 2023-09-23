@@ -7,11 +7,11 @@
   background: rgba(21, 14, 40, 0.93);
   overflow: hidden;
   position: absolute;
-  top: 0
+  top: 0;
 }
 
 .modal {
- border: 2px solid #d434fe;
+  border: 2px solid #d434fe;
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 25px;
@@ -27,7 +27,7 @@
 }
 
 .modal-content {
-	background: transparent;
+  background: transparent;
 }
 
 .success-img,
@@ -49,5 +49,26 @@
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+@media (max-width: 520px) {
+  .modal {
+    /* padding: */
+    max-width: 20rem;
+  }
+
+  .success-img {
+    max-width: 12rem;
+    max-height: 10rem;
+  }
+
+.modal-content h1 {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+
+.modal-content p {
+  font-size: 1rem;
+}
 
 }
