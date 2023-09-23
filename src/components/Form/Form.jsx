@@ -72,6 +72,7 @@ const Form = ({ showModal }) => {
 
     if (!response.ok) {
       console.log(data.message, "Not sent<<<<<<<<<<");
+      alert('Error submitting form, Server over load')
       setSubmitting(false)
       throw new Error(data.message || "Not sent<<<<<<<<<<");
     }

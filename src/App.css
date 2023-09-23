@@ -38,3 +38,30 @@ html,
 .loading {
   width: 1rem;
 }
+
+
+
+
+::-webkit-scrollbar {
+  width: 10px; /* Width for Webkit browsers (e.g., Chrome, Safari) */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #903AFF; /* Color of the scrollbar thumb */
+}
+
+
+
+/* Customize scrollbar color */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #903AFF;
+  border-radius: 7px /* Color of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #903AFF; /* Color on hover */
+}
