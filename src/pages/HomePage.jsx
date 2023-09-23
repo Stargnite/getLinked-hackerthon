@@ -10,7 +10,6 @@ import Sponsors from "../components/Sponsors/Sponsors";
 import Terms from "../components/Terms/Terms";
 import Footer from "../components/Footer/Footer";
 
-
 const HomePage = () => {
   return (
     <div>
@@ -18,8 +17,8 @@ const HomePage = () => {
       <Intro />
       <Guidelines />
       <Criteria />
-      <Faqs />
-      <Timeline />
+      <Faqs id="faq" />
+      <Timeline id="timeline" />
       <Prizes />
       <Sponsors />
       <Terms />

@@ -1,7 +1,89 @@
 import "./form.css";
-import Move from './../../../public/move.svg'
+import Move from "./../../../public/move.svg";
+import { useRef, useState, useEffect } from "react";
+import axios from "axios";
+import LoadingSpinner from './../LoadingSpinner'
 
 const Form = ({ showModal }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const [submitting, setSubmitting] =useState(false);
+
+
+    // FOR FETCHING CATEGORIES
+    useEffect(() => {
+      setIsLoading(true)
+      axios
+        .get("https://backend.getlinked.ai/hackathon/categories-list", {"Content-Type": "application/json"})
+        .then((res) => {
+          setCategories(res.data);
+          setIsLoading(false);
+        })
+        .catch(function (error) {
+          console.log(error);
+          setIsLoading(false);
+          alert(`Error fetching data: ${error.message}`);
+        });
+    }, []);
+
+
+  const teamNameRef = useRef();
+  const phoneRef = useRef();
+  const emailRef = useRef();
+  const projectTopicRef = useRef();
+  const categoryRef = useRef();
+  const groupSizeRef = useRef();
+  const policyAcceptedRef = useRef();
+
+  const submitRegistration = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    const teamName = teamNameRef.current.value;
+    const phoneNo = phoneRef.current.value;
+    const email = emailRef.current.value;
+    const projectTopic = projectTopicRef.current.value;
+    const category = categoryRef.current.value;
+    const groupSize = groupSizeRef.current.value;
+    let policyIsAccepted = policyAcceptedRef.current.checked;
+
+    const formData = {
+      email: email,
+      phone_number: phoneNo,
+      team_name: teamName,
+      group_size: groupSize,
+      project_topic: projectTopic,
+      category: category,
+      privacy_poclicy_accepted: policyIsAccepted,
+    };
+
+    console.log(formData)
+
+    const response = await fetch(
+      "https://backend.getlinked.ai/hackathon/registration",
+      {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.log(data.message, "Not sent<<<<<<<<<<");
+      setSubmitting(false)
+      throw new Error(data.message || "Not sent<<<<<<<<<<");
+    }
+
+    setSubmitting(false);
+    console.log("post successful");
+    showModal()
+  };
+
+
+
+
   return (
     <div className="form-wrapper flex flex-col">
       <div className="form-content">
@@ -12,7 +94,7 @@ const Form = ({ showModal }) => {
         </h1>
       </div>
       <div className="form ">
-        <form>
+        <form onSubmit={submitRegistration}>
           <div className="input-content">
             <div className="cont">
               <label className="text" htmlFor="teamName">
@@ -24,6 +106,7 @@ const Form = ({ showModal }) => {
                 name="teamName"
                 placeholder="Enter team's name"
                 required
+                ref={teamNameRef}
               />
             </div>
 
@@ -37,6 +120,7 @@ const Form = ({ showModal }) => {
                 name="phoneNumber"
                 required
                 placeholder="e.g., 1234567890"
+                ref={phoneRef}
               />
             </div>
           </div>
@@ -46,7 +130,14 @@ const Form = ({ showModal }) => {
               <label htmlFor="email" id="email" className="text">
                 Email
               </label>
-              <input type="email" placeholder="Enter your email address" />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="Enter your email address"
+                ref={emailRef}
+              />
             </div>
             <div className="cont">
               <label className="text" htmlFor="projectTopic">
@@ -58,6 +149,7 @@ const Form = ({ showModal }) => {
                 name="projectTopic"
                 placeholder="Enter project topic"
                 required
+                ref={projectTopicRef}
               />
             </div>
           </div>
@@ -72,10 +164,14 @@ const Form = ({ showModal }) => {
                 id="category"
                 name="category"
                 required
+                ref={categoryRef}
               >
-                <option value="category1">Select your category</option>
-                <option value="category2">Select your category</option>
-                <option value="category3">Select your category</option>
+
+                {categories.map((category) => {
+                  return (
+                    <option value={category.id} key={category.id}>{category.name}</option>
+                  );
+                })}
               </select>
             </div>
 
@@ -91,12 +187,10 @@ const Form = ({ showModal }) => {
                 required
                 min="1"
                 className="text"
+                ref={groupSizeRef}
               />
             </div>
           </div>
-
-
-
 
           <div className="end-details no-back">
             <p className="warning italic text-primary">
@@ -109,22 +203,20 @@ const Form = ({ showModal }) => {
                 name="termsCheckbox"
                 required
                 className="mt-6 mr-5 text"
+                ref={policyAcceptedRef}
               />
-              I agreed with the event{" "}
-              <a href="" target="_blank" className="no-back">
-                Terms and Conditions
-              </a>
+              I agreed with the event <b className="no-back">Terms and Conditions</b>
             </label>
           </div>
 
-          <button type="submit" value="Submit" className="submit-form">
-            Register Now
+          <button type="submit" value="Submit" className="submit-form" disabled={isLoading}>
+    
+            {submitting ? <div className="centered">
+                  <LoadingSpinner className="loading" />
+                  </div> : 'Register Now'}
           </button>
         </form>
       </div>
-      <button className="modal-btn mt-6" onClick={showModal}>
-        Toggle modal
-      </button>
     </div>
   );
 };

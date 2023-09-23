@@ -1,7 +1,7 @@
 nav {
   position: fixed;
   padding: 1rem 2rem;
-top:0;
+  top: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   z-index: 999;
   width: 100vw;
@@ -13,9 +13,8 @@ top:0;
 }
 
 .logo {
-	min-width: 80px;
+  min-width: 80px;
 }
-
 
 .small-nav {
   display: none !important;
@@ -32,11 +31,11 @@ top:0;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  border: none
+  border: none;
 }
 
 .register_btn {
-  padding: .5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   flex-shrink: 0;
   margin-left: 50px;
   border: none;
@@ -55,24 +54,25 @@ top:0;
 }
 
 .active {
-	background: none;
+  background: none;
   border-radius: 4px;
-border: 1px solid #9A39FF;
+  border: 1px solid #9a39ff;
 }
+
+
 
 
 @media (max-width: 830px) {
   .large-nav {
-    display:none !important ;
+    display: none !important ;
   }
   .small-nav {
-    display:block !important ;
+    display: block !important ;
   }
 
   .cancel {
     display: flex;
     align-self: end;
-    
   }
   .small-nav .register_btn {
     max-width: 7rem;
@@ -81,5 +81,4 @@ border: 1px solid #9A39FF;
     display: flex;
     font-weight: bold;
   }
-
 }

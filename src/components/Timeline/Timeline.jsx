@@ -1,15 +1,26 @@
 import "./timeline.css";
-import TimelineImg from './../../../public/timeline.svg'
-import TimelineNums from './../../../public/timeline-num.svg'
-import TimelineDetails from './../../../public/timeline-details.svg'
+import TimelineImg from "./../../../public/timeline.svg";
+import TimelineNums from "./../../../public/timeline-num.svg";
+import TimelineDetails from "./../../../public/timeline-details.svg";
 
 const Timeline = () => {
   return (
-    <div className="timeline flex justify-center">
-      <img src={TimelineImg} alt="" className="timeline-img-lg" />
-      <div className="timeline-img-sm mt-24">
-        <img src={TimelineNums} alt="" className="mr-4" />
-        <img src={TimelineDetails} alt="" />
+    <div className="">
+      <div className="flex-col items-center timeline-text">
+        <h2 className="text-center mt-36 text-3xl text-stone-100 font-bold">
+          Timeline
+        </h2>
+        <p className="text-center my-4 text-stone-100 w-96">
+          Here is the breakdown of the time we anticipate using for the upcoming
+          event.
+        </p>
+      </div>
+      <div className="timeline flex justify-center">
+        <img src={TimelineImg} alt="" className="timeline-img-lg" />
+        <div className="timeline-img-sm mt-24">
+          <img src={TimelineNums} alt="" className="mr-4" />
+          <img src={TimelineDetails} alt="" />
+        </div>
       </div>
       {/* <div className="flex flex-col items-center">
         <h2 className="text-center mt-36 text-3xl text-stone-100 font-bold">

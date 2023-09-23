@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Logo from "./../../../public/logo.svg";
 import "./navbar.css";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import { Link as ReactScrollLink } from "react-scroll";
 import ToggleNav from "./../../../public/toggleNav.svg";
 // import './registerpage.css'
 const Navbar = () => {
@@ -30,18 +31,24 @@ const Navbar = () => {
             <img src={Logo} />
           </Link>
         </div>
-        <ul className=" flex text-center justify-between">
+        <ul className=" flex items-center justify-between">
           <Link className="nav_link border normal-link">
-            <li>Timeline</li>
+            <ReactScrollLink to="timeline" smooth={true} duration={1000}>
+              <li>Timeline</li>
+            </ReactScrollLink>
           </Link>
           <Link className="nav_link border normal-link">
             <li>Overview</li>
           </Link>
           <Link className="nav_link border normal-link">
-            <li>FAQs</li>
+            <ReactScrollLink to="faq" smooth={true} duration={1000}>
+              <li>FAQs</li>
+            </ReactScrollLink>
           </Link>
-          <Link className="nav_link border normal-link">Contact</Link>
-          <Link
+          <Link to="/contact" className="nav_link border normal-link">
+            Contact
+          </Link>
+          <NavLink
             to="/register"
             className={`nav_link border flex items-center register_btn ${
               isActive && "active"
@@ -49,14 +56,9 @@ const Navbar = () => {
             onClick={handleActive}
           >
             Register
-          </Link>
+          </NavLink>
         </ul>
       </div>
-
-
-
-
-
 
       <div className="small-nav flex justify-around">
         {!navIsActive && (
@@ -79,7 +81,12 @@ const Navbar = () => {
               X
             </div>
             <ul className=" flex flex-col text-center">
-              <Link className="text-white float-left mb-5 text-left">
+              <Link
+                className="text-white float-left mb-5 text-left"
+                to="timeline"
+                smooth={true}
+                duration={1000}
+              >
                 <li onClick={cancelNav}>Timeline</li>
               </Link>
               <Link className="text-white float-left mb-5 text-left">

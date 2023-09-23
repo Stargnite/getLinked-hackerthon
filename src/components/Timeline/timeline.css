@@ -1,3 +1,9 @@
+.timeline-text {
+  display: none;
+  margin: 0 2rem
+}
+
+
 .timeline-img-lg {
   margin: 7rem;
 }
@@ -11,9 +17,14 @@
     display: none;
   }
 
-  .timeline-img-sm {
+  .timeline-img-sm, .timeline-text {
     display: flex;
   }
+
+  .timeline-text p {
+    padding: 0 2rem;
+  }
+
 }
 
 /* .stage-wrapper {
