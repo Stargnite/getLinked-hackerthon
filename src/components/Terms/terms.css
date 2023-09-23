@@ -1,22 +1,26 @@
 .terms {
-  padding-left: 4rem;;
+  padding-left: 4rem;
   padding-right: 4rem;
   margin-top: 9rem;
 }
 
-.terms .total-text .header {
-  text-align: center;
-  width: auto;
-  margin: 0 3rem;
+.terms .total-text {
+  /* margin: 0; */
   margin-bottom: 3rem;
+}
+
+.terms .total-text .header {
+  width: 20rem;
+  margin: 3rem 0;
+
 }
 
 .main-text {
   border-radius: 5px;
   border: 1px solid #d434fe;
   background: rgba(217, 217, 217, 0.03);
-  padding: 5rem;
-  max-width: 35rem
+  padding: 2rem;
+  max-width: 35rem;
 }
 
 .main-text p,
@@ -44,6 +48,10 @@
   .main-text {
     margin: auto 2rem;
     margin-bottom: 2rem;
+  }
+
+  .header {
+    text-align: center;
   }
 
   .total-text h1 {

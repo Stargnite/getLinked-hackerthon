@@ -4,7 +4,7 @@ import "./footer.css";
 const Footer = () => {
   return (
     <div className="footer-wrapper text-white">
-      <div className="footer flex justify-between pt-9">
+      <div className="footer flex pt-9">
         <div className="remark max-w-sm">
           <img src={Logo} alt="" className="mb-2 logo" />
           <p className="text">
@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="links-wrapper">
-          <h1 className=" text text-primary font-bold">Useful links</h1>
+          <h1 className=" text text-primary text-xl font-bold">Useful links</h1>
           <div className="links flex flex-col text">
             <a href="" className="mb-2 text">overview</a>
             <a href=""className="mb-2 text">Timeline</a>
@@ -32,7 +32,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="contact">
-          <h1 className="text-primary font-bold pb-4 text">Contact Us</h1>
+          <h1 className="text-primary font-bold pb-4 text text-xl">Contact Us</h1>
           <div className="number">
             <p className="text pb-4">+234 6707653444</p>
           </div>

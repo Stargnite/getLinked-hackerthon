@@ -53,6 +53,11 @@ const Navbar = () => {
         </ul>
       </div>
 
+
+
+
+
+
       <div className="small-nav flex justify-around">
         {!navIsActive && (
           <div className="flex justify-between items-center">
@@ -69,7 +74,7 @@ const Navbar = () => {
         )}
 
         {navIsActive && (
-          <div className="flex flex-col">
+          <div className="flex flex-col nav-drop">
             <div className="cancel text-white text-2xl" onClick={cancelNav}>
               X
             </div>

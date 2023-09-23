@@ -14,7 +14,7 @@ const Hero = () => {
       <h2 className="mt-7 mr-16 ignite">
         Igniting a Revolution in HR Innovation
       </h2>
-      <div className="underliner ignite">
+      <div className="underliner ">
         <img src={underline} />
       </div>
 

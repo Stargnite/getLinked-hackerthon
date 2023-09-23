@@ -36,8 +36,6 @@ const questions = [
 const Faqs = () => {
 	const [selected, setSelected] = useState(0)
 
-
-
   const toggleQuestion = (index) => {
 	if(selected === index) {
 		return setSelected(null)
@@ -46,17 +44,17 @@ const Faqs = () => {
   };
 
   return (
-    <div className=" flex justify-around items-center intro">
+    <div className=" flex justify-around items-center faq-wrapper">
       <div className="max-w-xl text-white faq">
         <h1 className="text-3xl leading-normal tracking-normal font-extrabold mb-4">
           Frequently Asked <br />
           <span className="text-primary">Questions</span>
         </h1>
-        <p className=" pb-10">
+        <p className="px-3 pb-10">
           We got answers to the questions that you might want to ask about <br />
           <b>getlinked Hackathon 1.0</b>
         </p>
-        <div className="accordion w-auto">
+        <div className="accordion">
           {questions.map((item, index) => {
             return (
               <div className="item py-3 font-semibold" key={index}>

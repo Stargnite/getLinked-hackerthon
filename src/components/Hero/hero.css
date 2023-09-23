@@ -72,18 +72,23 @@
 
 @media (max-width: 830px) {
   .ignite {
-    font-size: 1rem;
+    font-size: .8rem;
     text-align: left;
     display: block;
     margin-left: 2rem;
+      font-weight: 300;
+      line-height: 2.25rem;
+      text-align: left;
+      justify-content: center;
+    
   }
 
   .underliner {
     display: flex;
     justify-content: center;
     max-width: 7rem;
-    margin-left: 14rem;
-
+    margin-left: 9rem;
+    margin-top: -0.5rem;
   }
 
   .hero_wrapper {

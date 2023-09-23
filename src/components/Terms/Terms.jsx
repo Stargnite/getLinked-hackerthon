@@ -6,6 +6,7 @@ const Terms = () => {
   return (
     <div className="terms flex items-center justify-between">
       <div className="total-text text-white">
+        
         <h1 className="text-4xl font-bold mb-6">Privacy Policy and <br /><span className="text-primary">Terms</span></h1>
         <div className="date text-gray-400 mb-6">Last updated on September 12, 2023</div>
         <p className="header">
@@ -23,7 +24,7 @@ const Terms = () => {
             in this policy.
           </p>
           <h1 className="policy text-primary mt-6 font-bold">Licensing Policy</h1>
-          <h1 className="terms-list-header whitespace-nowrap font-bold mb-4">
+          <h1 className="terms-list-header font-bold mb-4">
             Here are terms of our Standard License:
           </h1>
           <div className="list leading-7">
