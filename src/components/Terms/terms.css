@@ -29,6 +29,11 @@
   background: transparent;
 }
 
+.list .item {
+  
+}
+
+
 .security-img {
 	position: relative;
 }
@@ -40,8 +45,9 @@
 
 .check-icon {
   background: none;
-  padding-right: 5px;
+  margin-right: 5px;
   float: left;
+  margin-top: .5rem;
   width: .7rem;
 }
 

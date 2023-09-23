@@ -75,7 +75,7 @@ const Navbar = () => {
 
         {navIsActive && (
           <div className="flex flex-col nav-drop">
-            <div className="cancel text-white text-2xl" onClick={cancelNav}>
+            <div className="cancel text-white text-3xl" onClick={cancelNav}>
               X
             </div>
             <ul className=" flex flex-col text-center">

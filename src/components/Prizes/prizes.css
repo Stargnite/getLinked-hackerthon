@@ -71,6 +71,7 @@
   .price-text .text {
     max-width: 25rem;
     margin-left: 0;
+    margin: 0 1.5rem;
   }
 
   .rewards {
