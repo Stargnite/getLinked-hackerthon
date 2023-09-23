@@ -7,7 +7,7 @@ const Timeline = () => {
   return (
     <div className="timeline flex justify-center">
       <img src={TimelineImg} alt="" className="timeline-img-lg" />
-      <div className="timeline-img-sm flex">
+      <div className="timeline-img-sm mt-24">
         <img src={TimelineNums} alt="" className="mr-4" />
         <img src={TimelineDetails} alt="" />
       </div>

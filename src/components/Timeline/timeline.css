@@ -1,19 +1,18 @@
 .timeline-img-lg {
-  margin-top: 7rem;
+  margin: 7rem;
 }
 
 .timeline-img-sm {
   display: none;
-  
 }
 
-@media (max-width: 830px) {
+@media (max-width: 900px) {
   .timeline-img-lg {
     display: none;
   }
 
   .timeline-img-sm {
-    display: block;
+    display: flex;
   }
 }
 
