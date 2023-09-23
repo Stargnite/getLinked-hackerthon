@@ -38,6 +38,13 @@
 	background-color: transparent;
 }
 
+.check-icon {
+  background: none;
+  padding-right: 5px;
+  float: left;
+  width: .7rem;
+}
+
 
 @media (max-width: 830px) {
   .terms {
@@ -45,9 +52,14 @@
     flex-direction: column;
   }
 
+  .terms h1:nth-child(1) {
+    font-size: 2rem;
+  }
+
   .main-text {
-    margin: auto 2rem;
-    margin-bottom: 2rem;
+    margin: auto .7rem;
+    max-width: auto;
+    font-size: .7rem;
   }
 
   .header {
@@ -58,12 +70,10 @@
     line-height: normal;
   }
 
-  .main-text h1 {
+  .main-text h1, .list {
     text-align: left;
   }
-  .list {
-    text-align: left;
-  }
+
 
   .padlock-man, .padlock-svg {
     max-width: 20rem;

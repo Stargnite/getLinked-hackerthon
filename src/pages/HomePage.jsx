@@ -19,9 +19,9 @@ const HomePage = () => {
       <Guidelines />
       <Criteria />
       <Faqs />
-      {/* <Timeline /> */}
+      <Timeline />
       <Prizes />
-      {/* <Sponsors /> */}
+      <Sponsors />
       <Terms />
       <Footer />
     </div>

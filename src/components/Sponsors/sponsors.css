@@ -1,6 +1,21 @@
 .companies {
-
+  border: 1px solid #d434fe;
+  padding: 1rem;
+  border-radius: 5px;
 }
-.company {
-	max-width: 10rem;
+
+.sponsors-img {
+  min-width: 50rem;
+  background: none;
+}
+
+@media (max-width: 830px) {
+  .sponsors p {
+    padding: 0 1rem; 
+	font-size: .7rem;
+  }
+
+  .sponsors-img {
+    min-width: 20rem;
+  }
 }

@@ -1,9 +1,17 @@
 import "./timeline.css";
+import TimelineImg from './../../../public/timeline.svg'
+import TimelineNums from './../../../public/timeline-num.svg'
+import TimelineDetails from './../../../public/timeline-details.svg'
 
 const Timeline = () => {
   return (
-    <div className="timeline">
-      <div className="flex flex-col items-center">
+    <div className="timeline flex justify-center">
+      <img src={TimelineImg} alt="" className="timeline-img-lg" />
+      <div className="timeline-img-sm flex">
+        <img src={TimelineNums} alt="" className="mr-4" />
+        <img src={TimelineDetails} alt="" />
+      </div>
+      {/* <div className="flex flex-col items-center">
         <h2 className="text-center mt-36 text-3xl text-stone-100 font-bold">
           Timeline
         </h2>
@@ -121,7 +129,7 @@ const Timeline = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

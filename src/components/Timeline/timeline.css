@@ -1,4 +1,23 @@
-.stage-wrapper {
+.timeline-img-lg {
+  margin-top: 7rem;
+}
+
+.timeline-img-sm {
+  display: none;
+  
+}
+
+@media (max-width: 830px) {
+  .timeline-img-lg {
+    display: none;
+  }
+
+  .timeline-img-sm {
+    display: block;
+  }
+}
+
+/* .stage-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,11 +56,4 @@
     grid-template-rows: repeat(2, 100px);
     gap: 10px;
   }
-
-  .line-wrapper {
-    grid-column: 2; /* Place in the second column */
-  grid-row: 1; /* Place in the first row */
-  order: -1;
-  }
-
-}
+} */
