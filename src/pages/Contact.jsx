@@ -1,11 +1,25 @@
+import "./contact.css";
+import ContactForm from "../components/ContactForm/ContactForm";
+
 const Contact = () => {
-  return <div>Contact
-	Lorem ipsum dolor sit amet consectetur a
-	dipisicing elit. Delectus atque repudiandae, <br />
-	quae, eaque assumenda consectetur unde, officiis 
-	cumque <br /><br /><br />soluta nam sint commodi <br />
-	laboriosam repellendus. Facilis dignissimos perspiciatis magni esse deserunt.
-  </div>;
+  return (
+    <div className="contact-wrapper">
+      <div className="contact text-white flex justify-around no-back">
+        <div className="flex flex-col">
+          <h1 className="text-primary text-4xl font-bold mb-5">Get in touch</h1>
+          <p className="mb-5 text-xl">Contact Infomation</p>
+          <p className="mb-5">27, Alara Street Yaba 100012 Lagos State</p>
+          <p className="mb-5">Call us: 07057981819</p>
+          <p className="mb-5">
+            we are open from Monday-Friday <br /> 08:00am - 05:00pm
+          </p>
+			<p className="text-primary">Share on</p>
+			<div className="icons"></div>
+        </div>
+        <ContactForm />
+      </div>
+    </div>
+  );
 };
 
 export default Contact;
