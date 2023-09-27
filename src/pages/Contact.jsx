@@ -7,7 +7,7 @@ const Contact = () => {
     <Animation>
       <div className="contact-wrapper">
         <div className="contact text-white flex justify-around no-back">
-          <div className="flex flex-col pt-16">
+          <div className="flex flex-col pt-16 contact-text">
             <h1 className="text-primary text-4xl font-bold mb-5">
               Get in touch
             </h1>
