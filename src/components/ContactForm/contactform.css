@@ -1,4 +1,42 @@
+.contactForm-wrapper {
+	/* background: #1c162f;
+	border-radius: 3rem;
+	padding: 2rem; */
+}
+
+.contactForm-wrapper h1 {
+	background: #1c162c;
+}
+
+
 .contact-form {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  background: none;
+  background: #1c162f;
+  border-radius: 3rem;
+  padding: 2rem;
+}
+
+.contact-form {
+  width: 30rem;
+  padding-top: 2rem;
+}
+
+.contact-form input {
+  padding: 0.5rem 1rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  max-width: 25rem;
+}
+
+.message-box {
+  min-height: 7rem;
+}
+
+.contact_btn {
+  padding: 0.5rem 1.5rem;
+  background: red;
+  border-radius: 4px;
 }
