@@ -63,7 +63,7 @@ const Navbar = () => {
       <div className="small-nav flex justify-around">
         {!navIsActive && (
           <div className="flex justify-between items-center">
-            <div className="logo">
+            <div className="small-logo">
               <Link to="/">
                 <img src={Logo} />
               </Link>

@@ -2,30 +2,30 @@ import "./form.css";
 import Move from "./../../../public/move.svg";
 import { useRef, useState, useEffect } from "react";
 import axios from "axios";
-import LoadingSpinner from './../LoadingSpinner'
+import LoadingSpinner from "./../LoadingSpinner";
 
 const Form = ({ showModal }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [categories, setCategories] = useState([]);
-  const [submitting, setSubmitting] =useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-
-    // FOR FETCHING CATEGORIES
-    useEffect(() => {
-      setIsLoading(true)
-      axios
-        .get("https://backend.getlinked.ai/hackathon/categories-list", {"Content-Type": "application/json"})
-        .then((res) => {
-          setCategories(res.data);
-          setIsLoading(false);
-        })
-        .catch(function (error) {
-          console.log(error);
-          setIsLoading(false);
-          alert(`Error fetching data: ${error.message}`);
-        });
-    }, []);
-
+  // FOR FETCHING CATEGORIES
+  useEffect(() => {
+    setIsLoading(true);
+    axios
+      .get("https://backend.getlinked.ai/hackathon/categories-list", {
+        "Content-Type": "application/json",
+      })
+      .then((res) => {
+        setCategories(res.data);
+        setIsLoading(false);
+      })
+      .catch(function (error) {
+        console.log(error);
+        setIsLoading(false);
+        alert(`Error fetching data: ${error.message}`);
+      });
+  }, []);
 
   const teamNameRef = useRef();
   const phoneRef = useRef();
@@ -35,6 +35,8 @@ const Form = ({ showModal }) => {
   const groupSizeRef = useRef();
   const policyAcceptedRef = useRef();
 
+
+  // For sending registration data
   const submitRegistration = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -42,9 +44,12 @@ const Form = ({ showModal }) => {
     const phoneNo = phoneRef.current.value;
     const email = emailRef.current.value;
     const projectTopic = projectTopicRef.current.value;
-    const category = categoryRef.current.value;
-    const groupSize = groupSizeRef.current.value;
-    let policyIsAccepted = policyAcceptedRef.current.checked;
+    let category = categoryRef.current.value;
+    let groupSize = groupSizeRef.current.value;
+    const policyIsAccepted = policyAcceptedRef.current.checked;
+
+    groupSize = parseInt(groupSize);
+    category = parseInt(category);
 
     const formData = {
       email: email,
@@ -56,7 +61,7 @@ const Form = ({ showModal }) => {
       privacy_poclicy_accepted: policyIsAccepted,
     };
 
-    console.log(formData)
+    // console.log(formData);
 
     const response = await fetch(
       "https://backend.getlinked.ai/hackathon/registration",
@@ -68,22 +73,20 @@ const Form = ({ showModal }) => {
         },
       }
     );
+
     const data = await response.json();
+    showModal();
 
     if (!response.ok) {
-      console.log(data.message, "Not sent<<<<<<<<<<");
-      alert('Error submitting form, Server over load')
-      setSubmitting(false)
+      console.log("Not sent<<<<<<<<<<");
+      alert("Error submitting form, Server currently busy");
+      setSubmitting(false);
       throw new Error(data.message || "Not sent<<<<<<<<<<");
     }
 
     setSubmitting(false);
     console.log("post successful");
-    showModal()
   };
-
-
-
 
   return (
     <div className="form-wrapper flex flex-col">
@@ -167,10 +170,11 @@ const Form = ({ showModal }) => {
                 required
                 ref={categoryRef}
               >
-
                 {categories.map((category) => {
                   return (
-                    <option value={category.id} key={category.id}>{category.name}</option>
+                    <option value={category.id} key={category.id}>
+                      {category.name}
+                    </option>
                   );
                 })}
               </select>
@@ -206,15 +210,24 @@ const Form = ({ showModal }) => {
                 className="mt-6 mr-5 text"
                 ref={policyAcceptedRef}
               />
-              I agreed with the event <b className="no-back">Terms and Conditions</b>
+              I agreed with the event{" "}
+              <b className="no-back">Terms and Conditions</b>
             </label>
           </div>
 
-          <button type="submit" value="Submit" className="submit-form" disabled={isLoading}>
-    
-            {submitting ? <div className="centered">
-                  <LoadingSpinner className="loading" />
-                  </div> : 'Register Now'}
+          <button
+            type="submit"
+            value="Submit"
+            className="submit-form"
+            disabled={isLoading}
+          >
+            {submitting ? (
+              <div className="centered">
+                <LoadingSpinner className="loading" />
+              </div>
+            ) : (
+              "Register Now"
+            )}
           </button>
         </form>
       </div>

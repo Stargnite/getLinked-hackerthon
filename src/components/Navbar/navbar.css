@@ -13,7 +13,7 @@ nav {
 }
 
 .logo {
-  min-width: 80px;
+  min-width: 70px;
 }
 
 .small-nav {
@@ -68,6 +68,10 @@ nav {
   }
   .small-nav {
     display: block !important ;
+  }
+
+  .small-logo {
+    max-width: 6rem;
   }
 
   .cancel {
