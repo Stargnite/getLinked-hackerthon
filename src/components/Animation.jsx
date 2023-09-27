@@ -3,7 +3,7 @@ import { useRef, useEffect } from "react";
 
 const Animation = ({ children }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref);
 
   const mainControls = useAnimation();
 
@@ -11,6 +11,9 @@ const Animation = ({ children }) => {
     // Activate animation
     if (isInView) {
       mainControls.start("visible");
+    } else {
+      mainControls.start("hidden");
+
     }
   }, [isInView, mainControls]);
 
@@ -19,7 +22,7 @@ const Animation = ({ children }) => {
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 80 },
-          visible: { opacity: 1, y: 0 },
+          visible: { opacity: 0.7, y: 0 },
         }}
         initial="hidden"
         animate={mainControls}

@@ -2,6 +2,10 @@
   margin: 0 3rem;
 }
 
+.faqs-text {
+  margin-left: 3rem;
+}
+
 .accordion .item {
   border-bottom: 2px solid #d434fe;
 }
@@ -31,9 +35,12 @@
 		padding: 0;
 		margin-top: 2rem;
 		text-align: center;
-		/* max-width: 30rem; */
-		/* margin-left: 3rem; */
 	}
+
+  .faqs-text {
+    margin: 0;
+    padding: 1rem;
+  }
 
   .accordion h2, .content {
     text-align: left;

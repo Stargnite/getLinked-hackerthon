@@ -3,13 +3,13 @@ import Office from "./../../public/officeman.png";
 import "./registerpage.css";
 import { useState } from "react";
 import Modal from "../components/Modal/Modal";
+import Animation from "../components/Animation";
 
 const RegisterPage = () => {
   const [modalIsActive, setModalIsActive] = useState(false);
 
   const showModal = () => {
-    setModalIsActive(!modalIsActive);
-    console.log(modalIsActive);
+    setModalIsActive(true);
   };
 
   const closeModal = () => {
@@ -17,15 +17,17 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="register-page">
-      <div className="register-content text-white flex justify-around mx-16 my-24">
-        <div className="office-img flex items-center">
-          <img src={Office} alt="" className="" />
+    <Animation>
+      <div className="register-page">
+        <div className="register-content text-white flex justify-around mx-16 my-24">
+          <div className="office-img flex items-center">
+            <img src={Office} alt="" className="" />
+          </div>
+          <Form showModal={showModal} />
         </div>
-        <Form showModal={showModal} />
+        {modalIsActive && <Modal closeModal={closeModal} />}
       </div>
-      {modalIsActive && <Modal closeModal={closeModal} />}
-    </div>
+    </Animation>
   );
 };
 

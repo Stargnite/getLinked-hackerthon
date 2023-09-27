@@ -4,7 +4,8 @@ import "./navbar.css";
 import { NavLink, Link } from "react-router-dom";
 import { Link as ReactScrollLink } from "react-scroll";
 import ToggleNav from "./../../../public/toggleNav.svg";
-// import './registerpage.css'
+import Animation from "../Animation";
+
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
   const [navIsActive, setNavIsActive] = useState(false);
@@ -76,37 +77,43 @@ const Navbar = () => {
         )}
 
         {navIsActive && (
-          <div className="flex flex-col nav-drop">
-            <div className="cancel text-white text-3xl" onClick={cancelNav}>
-              X
+          <Animation>
+            <div className="flex flex-col nav-drop">
+              <div className="cancel text-white text-3xl" onClick={cancelNav}>
+                X
+              </div>
+              <ul className=" flex flex-col text-center">
+                <Link
+                  className="text-white float-left mb-5 text-left"
+                  to="timeline"
+                  smooth={true}
+                  duration={1000}
+                >
+                  <ReactScrollLink to="timeline" smooth={true} duration={1000}>
+                    <li onClick={cancelNav}>Timeline</li>
+                  </ReactScrollLink>
+                </Link>
+                <Link className="text-white float-left mb-5 text-left">
+                  <li onClick={cancelNav}>Overview</li>
+                </Link>
+                <Link className="text-white float-left mb-5 text-left">
+                  <ReactScrollLink to="faq" smooth={true} duration={1000}>
+                    <li onClick={cancelNav}>FAQs</li>
+                  </ReactScrollLink>
+                </Link>
+                <Link to="/contact" className="text-white float-left mb-5 text-left">
+                  <li onClick={cancelNav}>Contact</li>
+                </Link>
+                <Link
+                  to="/register"
+                  className={`nav_link register_btn ${isActive && "active"}`}
+                  onClick={handleActive}
+                >
+                  Register
+                </Link>
+              </ul>
             </div>
-            <ul className=" flex flex-col text-center">
-              <Link
-                className="text-white float-left mb-5 text-left"
-                to="timeline"
-                smooth={true}
-                duration={1000}
-              >
-                <li onClick={cancelNav}>Timeline</li>
-              </Link>
-              <Link className="text-white float-left mb-5 text-left">
-                <li onClick={cancelNav}>Overview</li>
-              </Link>
-              <Link className="text-white float-left mb-5 text-left">
-                <li onClick={cancelNav}>FAQs</li>
-              </Link>
-              <Link className="text-white float-left mb-5 text-left">
-                <li onClick={cancelNav}>Contact</li>
-              </Link>
-              <Link
-                to="/register"
-                className={`nav_link register_btn ${isActive && "active"}`}
-                onClick={handleActive}
-              >
-                Register
-              </Link>
-            </ul>
-          </div>
+          </Animation>
         )}
       </div>
     </nav>

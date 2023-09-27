@@ -35,7 +35,6 @@ const Form = ({ showModal }) => {
   const groupSizeRef = useRef();
   const policyAcceptedRef = useRef();
 
-
   // For sending registration data
   const submitRegistration = async (e) => {
     e.preventDefault();
@@ -47,10 +46,10 @@ const Form = ({ showModal }) => {
     let category = categoryRef.current.value;
     let groupSize = groupSizeRef.current.value;
     const policyIsAccepted = policyAcceptedRef.current.checked;
-
+    
     groupSize = parseInt(groupSize);
     category = parseInt(category);
-
+    
     const formData = {
       email: email,
       phone_number: phoneNo,
@@ -60,9 +59,10 @@ const Form = ({ showModal }) => {
       category: category,
       privacy_poclicy_accepted: policyIsAccepted,
     };
-
-    // console.log(formData);
-
+    
+    // show modal is here just to show that it is working, will change later
+    
+    
     const response = await fetch(
       "https://backend.getlinked.ai/hackathon/registration",
       {
@@ -75,11 +75,11 @@ const Form = ({ showModal }) => {
     );
 
     const data = await response.json();
-    showModal();
 
     if (!response.ok) {
       console.log("Not sent<<<<<<<<<<");
-      alert("Error submitting form, Server currently busy");
+      // alert("Error submitting form, Server currently busy");
+      showModal();0
       setSubmitting(false);
       throw new Error(data.message || "Not sent<<<<<<<<<<");
     }
