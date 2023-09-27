@@ -1,11 +1,13 @@
 import BigIdea from "../../../public/the-big-idea1.png";
 import "./intro.css";
+import Animation from "../Animation";
 
 const Into = () => {
   return (
+    <Animation>
     <div className=" mt-36 flex justify-around items-center intro">
       <div className="max-w-lg bulb-wrapper">
-        <p className="text-white text-2xl">The Big <br /> Idea!</p>
+        <p className="text-white text-2xl text-center">The Big <br /> Idea!</p>
         <img src={BigIdea} alt="" className="bulb" />
       </div>
       <div className="max-w-xl text-white">
@@ -23,6 +25,8 @@ const Into = () => {
         </p>
       </div>
     </div>
+
+    </Animation>
   );
 };
 
